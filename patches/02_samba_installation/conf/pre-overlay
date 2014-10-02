@@ -1,0 +1,12 @@
+#!/bin/bash -ex
+# executed before apply-overlay
+
+echo "----------------------------"
+echo " Install samba webmin-samba "
+echo "----------------------------"
+apt-get update
+apt-get -y install samba
+apt-get -y install webmin-samba
+mkdir -m 775 /srv/storage
+chown -R root:users /srv/storage
+chmod -R o=rt /srv/storage

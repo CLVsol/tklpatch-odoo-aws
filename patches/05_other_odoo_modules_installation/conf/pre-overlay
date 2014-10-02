@@ -1,0 +1,25 @@
+#!/bin/bash -ex
+# executed after apply-overlay
+
+CLVSOL_ODOO_ADDONS_DIR=/opt/openerp/clvsol_odoo_addons
+CLVSOL_ODOO_SOLUTIONS_DIR=/opt/openerp/clvsol_odoo_solutions
+
+OCA_SERVER_TOOLS_DIR=/opt/openerp/oca_server_tools
+
+echo "----------------------------"
+echo " Install CLVsol Odoo Addons "
+echo "----------------------------"
+git clone https://github.com/CLVsol/odoo_addons.git $CLVSOL_ODOO_ADDONS_DIR
+chown -R openerp:openerp $CLVSOL_ODOO_ADDONS_DIR
+
+echo "-------------------------------"
+echo " Install CLVsol Odoo Solutions "
+echo "-------------------------------"
+git clone https://github.com/CLVsol/odoo_solutions.git $CLVSOL_ODOO_SOLUTIONS_DIR
+chown -R openerp:openerp $CLVSOL_ODOO_SOLUTIONS_DIR
+
+echo "--------------------------"
+echo " Install OCA Server Tools "
+echo "--------------------------"
+git clone https://github.com/OCA/server-tools.git $OCA_SERVER_TOOLS_DIR --branch 8.0
+chown -R openerp:openerp $OCA_SERVER_TOOLS_DIR

@@ -1,0 +1,29 @@
+#!/bin/bash -ex
+# executed before apply-overlay
+
+echo "---------------------------------------------"
+echo " Install PostgreSQL 9.3                      "
+echo " source https://wiki.postgresql.org/wiki/Apt "
+echo "---------------------------------------------"
+cat >> /etc/apt/sources.list.d/security.sources.list <<"EOF"
+deb http://apt.postgresql.org/pub/repos/apt/ wheezy-pgdg main
+EOF
+wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | apt-key add -
+apt-get update
+apt-get -y install postgresql
+cat > /tmp/postgres_changepass.sql <<"EOF"
+ALTER USER postgres WITH PASSWORD 'postgres';
+EOF
+su -c - postgres "psql template1 -U postgres -f /tmp/postgres_changepass.sql"
+
+echo "---------------------------"
+echo " Install webmin-postgresql "
+echo "---------------------------"
+apt-get update
+apt-get -y install webmin-postgresql
+
+echo "--------------------"
+echo " Install phppgadmin "
+echo "--------------------"
+apt-get update
+apt-get -y install phppgadmin 
