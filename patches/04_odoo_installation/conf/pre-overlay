@@ -6,5 +6,5 @@ ODOO_DIR=/opt/openerp/odoo
 echo "--------------"
 echo " Install Odoo "
 echo "--------------"
-git clone https://github.com/odoo/odoo.git $ODOO_DIR
+git clone https://github.com/odoo/odoo.git $ODOO_DIR --branch 8.0
 chown -R openerp:openerp $ODOO_DIR
