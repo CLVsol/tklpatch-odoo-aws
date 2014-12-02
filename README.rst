@@ -1,7 +1,7 @@
 tklpatch-odoo-aws
 =================
 
-This project will help you install `Odoo 8.0 <https://www.odoo.com/>`_ over a `TurnKey LAMP <http://www.turnkeylinux.org/lamp>`_ appliance, using the Amazon Web Services (AWS) EC2 infrastructure.
+This project will help you install `Odoo 7.0 <https://www.odoo.com/>`_ over a `TurnKey LAMP <http://www.turnkeylinux.org/lamp>`_ appliance, using the Amazon Web Services (AWS) EC2 infrastructure.
 
 #. Create, via TrunKey Hub, an Amazon EC2 instance:
 
@@ -79,7 +79,7 @@ This project will help you install `Odoo 8.0 <https://www.odoo.com/>`_ over a `T
 	::
 
 		cd /root
-		git-clone https://github.com/CLVsol/tklpatch-odoo-aws.git clvsol_tklpatch-odoo-aws
+		git-clone https://github.com/CLVsol/tklpatch-odoo-aws.git clvsol_tklpatch-odoo-aws --branch 7.0
 
 #. Apply the patch "clvsol_tklpatch-odoo-aws":
 
