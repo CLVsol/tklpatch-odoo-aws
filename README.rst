@@ -1,7 +1,7 @@
 tklpatch-odoo-aws
 =================
 
-This project will help you install `Odoo <https://www.odoo.com/>`_ over a `TurnKey LAMP <http://www.turnkeylinux.org/lamp>`_ appliance, using the Amazon Web Services (AWS) EC2 infrastructure.
+This project will help you install `Odoo 8.0 <https://www.odoo.com/>`_ over a `TurnKey LAMP <http://www.turnkeylinux.org/lamp>`_ appliance, using the Amazon Web Services (AWS) EC2 infrastructure.
 
 #. Create, via TrunKey Hub, an Amazon EC2 instance:
 
@@ -92,6 +92,7 @@ This project will help you install `Odoo <https://www.odoo.com/>`_ over a `TurnK
 
 	- root (Linux)
 	- root (MySQL)
+	- postgres (Linux)
 	- postgres (PostgreSQL)
 	- openerp (Linux)
 	- openuser (PostgreSQL)
