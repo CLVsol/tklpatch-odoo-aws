@@ -138,4 +138,4 @@ This project will help you install `Odoo 7.0 <https://www.odoo.com/>`_ over a `T
 	::
 
 		git remote add origin https://github.com/CLVsol/tklpatch-odoo-aws.git
-		git push -u origin master
+		git push -u origin 7.0
