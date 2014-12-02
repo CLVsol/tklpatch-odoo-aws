@@ -5,19 +5,19 @@ This project will help you install `Odoo <https://www.odoo.com/>`_ over a `TurnK
 
 #. Create, via TrunKey Hub, an Amazon EC2 instance:
 
-	- TurnKey Appliance: **LAMP Stack (13.0)**
-	- Hostname: **[tkl-odoo-aws]**
-	- Region: **[Sao Paulo (South America)]**
-	- Type: **EBS-backed (persistent)**
-	- Architecture: **64bit (amd64)**
-	- Size: **[Micro ($0.027/hour)]**
-	- SSH key-pair: **[tkl-odoo-aws]**
-	- Root file system size (GB): **[10]**
+		- TurnKey Appliance: **LAMP Stack (13.0)**
+		- Hostname: **[tkl-odoo-aws]**
+		- Region: **[Sao Paulo (South America)]**
+		- Type: **EBS-backed (persistent)**
+		- Architecture: **64bit (amd64)**
+		- Size: **[Micro ($0.027/hour)]**
+		- SSH key-pair: **[tkl-odoo-aws]**
+		- Root file system size (GB): **[10]**
 
 	Related information:
 
-	- Security Groups: **[turnkey-lamp-xxxx]**
-	- Private Key File: **[tkl-odoo-aws.pem]**
+		- Security Groups: **[turnkey-lamp-xxxx]**
+		- Private Key File: **[tkl-odoo-aws.pem]**
 
 	Security Group: [turnkey-lamp-xxxx] (Inbound)::
 
