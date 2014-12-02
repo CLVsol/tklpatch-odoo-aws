@@ -3,6 +3,8 @@ tklpatch-odoo-aws
 
 This project will help you install `Odoo 7.0 <https://www.odoo.com/>`_ over a `TurnKey LAMP <http://www.turnkeylinux.org/lamp>`_ appliance, using the Amazon Web Services (AWS) EC2 infrastructure.
 
+This brahch (7.0-jcafb) is a special case for the project `CLVhealth-JCAFB <http://jcafb.org>`_.
+
 #. Create, via TrunKey Hub, an Amazon EC2 instance:
 
 		- TurnKey Appliance: **LAMP Stack (13.0)**
@@ -79,7 +81,7 @@ This project will help you install `Odoo 7.0 <https://www.odoo.com/>`_ over a `T
 	::
 
 		cd /root
-		git-clone https://github.com/CLVsol/tklpatch-odoo-aws.git clvsol_tklpatch-odoo-aws --branch 7.0
+		git-clone https://github.com/CLVsol/tklpatch-odoo-aws.git clvsol_tklpatch-odoo-aws --branch 7.0-jcafb
 
 #. Apply the patch "clvsol_tklpatch-odoo-aws":
 
