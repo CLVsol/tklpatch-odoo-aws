@@ -133,7 +133,7 @@ This project will help you install `Odoo <https://www.odoo.com/>`_ over a `TurnK
 		/opt/openerp/openerp.init start
 
 #. Especial commands:
-]
+
 	::
 
 		git remote add origin https://github.com/CLVsol/tklpatch-odoo-aws.git
