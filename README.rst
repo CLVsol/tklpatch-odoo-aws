@@ -31,7 +31,7 @@ This project will help you install `Odoo <https://www.odoo.com/>`_ over a `TurnK
 		12321(Webmin)    0.0.0.0/0  (disable)
 		12322(Custom)    0.0.0.0/0  (disable)
 
-#. `Disable Password-based Login <http://aws.amazon.com/articles/1233?_encoding=UTF8&jiveRedirect=1>`_
+#. `Disable Password-based Login <http://aws.amazon.com/articles/1233?_encoding=UTF8&jiveRedirect=1>`_:
 
 	Log in to your instance as root and edit the ssh daemon configuration file "**/etc/ssh/sshd_config**"
 
@@ -49,53 +49,65 @@ This project will help you install `Odoo <https://www.odoo.com/>`_ over a `TurnK
 
 	**You will now only be able to log in with an ssh key.**
 
-#. Update host name, executing the following commands::
+#. Update host name, executing the following commands:
+
+	::
 
 		HOSTNAME=tkl-odoo-aws
 		echo "$HOSTNAME" > /etc/hostname
 		sed -i "s|127.0.1.1 \(.*\)|127.0.1.1 $HOSTNAME|" /etc/hosts
 		/etc/init.d/hostname.sh start
 
-#. Upgrade the software::
+#. Upgrade the software:
+
+	::
 
 		apt-get update
 		apt-get -y upgrade
 
-#. Install **TKLPatch** using the commands::
+#. Install **TKLPatch** using the commands:
 
-	apt-get update
-	apt-get -y install tklpatch
+	::
+
+		apt-get update
+		apt-get -y install tklpatch
 
 	The documentation is installed at "/usr/share/tklpatch/docs" and the exemples at "/usr/share/tklpatch/docs".
 
-#. Get the TKLPatch script "**clvsol_tklpatch-odoo-aws**" using the commands::
+#. Get the TKLPatch script "**clvsol_tklpatch-odoo-aws**" using the commands:
 
-	cd /root
-	git-clone https://github.com/CLVsol/tklpatch-odoo-aws.git clvsol_tklpatch-odoo-aws
+	::
 
-#. Apply the patch "clvsol_tklpatch-odoo-aws"::
+		cd /root
+		git-clone https://github.com/CLVsol/tklpatch-odoo-aws.git clvsol_tklpatch-odoo-aws
 
-	cd /root
-	tklpatch-apply / clvsol_tklpatch-odoo-aws
+#. Apply the patch "clvsol_tklpatch-odoo-aws":
 
-#. Change manually, using Webmin, the passwords for the accounts::
+	::
 
-	root (Linux)
-	root (MySQL)
-	postgres (PostgreSQL)
-	openerp (Linux)
-	openuser (PostgreSQL)
+		cd /root
+		tklpatch-apply / clvsol_tklpatch-odoo-aws
 
-#. Change manually, editing the Odoo configuration files (/opt/openerp/odoo/**openerp-server.conf**, /opt/openerp/odoo/**openerp-server_man.conf**), the passwords for the accounts::
+#. Change manually, using Webmin, the passwords for the accounts:
 
-	admin (Odoo server - admin_passwd)
-	openuser (account on PostgreSQL - db_password)
+	- root (Linux)
+	- root (MySQL)
+	- postgres (PostgreSQL)
+	- openerp (Linux)
+	- openuser (PostgreSQL)
 
-#. Reboot the **tkl-odoo-aws** instance::
+#. Change manually, editing the Odoo configuration files (/opt/openerp/odoo/**openerp-server.conf**, /opt/openerp/odoo/**openerp-server_man.conf**), the passwords for the accounts:
 
-	reboot
+	- admin (Odoo server - admin_passwd)
+	- openuser (account on PostgreSQL - db_password)
 
-#. Update the Security Group::
+#. Reboot the **tkl-odoo-aws** instance:
+
+	::
+
+		reboot
+
+#. Update the Security Group:
 
 	Security Group: [turnkey-lamp-xxxx] (Inbound)::
 
@@ -112,16 +124,17 @@ This project will help you install `Odoo <https://www.odoo.com/>`_ over a `TurnK
 		12323(Custom)    0.0.0.0/0  (disable)
 		12325(Custom)    0.0.0.0/0
 
-#. To stop and start the Odoo server, use the following commands (as root)::
+#. To stop and start the Odoo server, use the following commands (as root):
 
-	/opt/openerp/openerp.init stop
+	::
 
-	/opt/openerp/openerp.init start
+		/opt/openerp/openerp.init stop
 
-#. Especial commands::
+		/opt/openerp/openerp.init start
 
-	git remote add origin https://github.com/CLVsol/tklpatch-odoo-aws.git
-	git push -u origin master
+#. Especial commands:
+]
+	::
 
-.. toctree::
-    :maxdepth: 2
+		git remote add origin https://github.com/CLVsol/tklpatch-odoo-aws.git
+		git push -u origin master
