@@ -140,4 +140,4 @@ This brahch (7.0-jcafb) is a special case for the project `CLVhealth-JCAFB <http
 	::
 
 		git remote add origin https://github.com/CLVsol/tklpatch-odoo-aws.git
-		git push -u origin 7.0
+		git push -u origin 7.0-jcafb
